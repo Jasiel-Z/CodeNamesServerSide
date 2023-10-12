@@ -14,6 +14,9 @@ namespace Service
         void AddUserAccountToDatabase(string nickname, string email, string password);
 
         [OperationContract]
+        UserAccountSet  Login(String nickname, String password);
+
+        [OperationContract]
         void ShowUsersAccounts();
 
     }
