@@ -52,9 +52,21 @@ namespace Service
                     }
                 }
             }
+            public UserAccountSet Login(string nickname, string password)
+            {
+                using (var databaseContext = new CodeNamesGameEntities())
+                {
+                    var userAccountSet = databaseContext.UserAccountSet
+                       .FirstOrDefault(u => u.Nickname == nickname && u.Password == password);
+
+                    return userAccountSet;
+
+                }
+            }
 
 
+        }   
 
-        }
+
     
 }
